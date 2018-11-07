@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import Img from 'react-image';
+// import Img from 'react-image';
 
 class Landing extends Component {
 	constructor(props) {
@@ -32,9 +32,13 @@ class Landing extends Component {
 					</Link>{' '}
 					<div className="row">
 						{this.state.cakes.map((cake) => (
-							<div className="card" style={{ width: '15rem', marginRight: '10px', marginTop: '10px' }}>
+							<div
+								key={cake._id}
+								className="card"
+								style={{ width: '15rem', marginRight: '10px', marginTop: '10px' }}
+							>
 								<Link to={`/Show/${cake._id}`}>
-									<Img className="card-img-top" src={cake.imageUrl} alt="Cake image" />
+									<img className="card-img-top" src={cake.imageUrl} alt="Cake image" />
 									<div className="card-body">
 										<h5 className="card-title">{cake.name}</h5>
 									</div>

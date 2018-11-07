@@ -17,8 +17,6 @@ mongoose.connect(db).then(() => console.log('MongoDB Connected')).catch((err) =>
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.get('/', (req, res) => res.send('Hello World Boss!'));
-
 app.use('/api/cake', cakes);
 
 // serve statis assets if in production
